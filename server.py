@@ -28,7 +28,8 @@ def index():
 def showSummary():
     try :
         club = [club for club in clubs if club['email'] == request.form['email']][0]
-        return render_template('welcome.html',club=club,competitions=competitions)
+        other_clubs = [club for club in clubs if club['email'] != request.form['email']]
+        return render_template('welcome.html',club=club,competitions=competitions, other_clubs=other_clubs)
     except IndexError:
         return render_template('index.html', error="Email does not exist")
 
