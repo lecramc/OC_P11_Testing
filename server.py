@@ -4,14 +4,12 @@ from datetime import datetime
 
 def loadClubs():
     with open('clubs.json') as c:
-         listOfClubs = json.load(c)['clubs']
-         return listOfClubs
+        return json.load(c)['clubs']
 
 
 def loadCompetitions():
     with open('competitions.json') as comps:
-         listOfCompetitions = json.load(comps)['competitions']
-         return listOfCompetitions
+        return json.load(comps)['competitions']
 
 
 app = Flask(__name__)

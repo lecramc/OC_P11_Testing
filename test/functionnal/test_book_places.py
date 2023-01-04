@@ -22,6 +22,8 @@ driver.find_element(By.TAG_NAME,'button').click()
 time.sleep(2)
 message = driver.find_element(By.CLASS_NAME, 'message')
 assert "Great-booking complete!" in message.text
+points = driver.find_element(By.CLASS_NAME,'points-available')
+assert "Points available: 9" in points.text
 driver.find_element(By.PARTIAL_LINK_TEXT,'Logout').click()
 time.sleep(2)
 driver.quit()
